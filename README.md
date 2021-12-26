@@ -19,6 +19,7 @@ In order to achieve the goals of the exercise supervised learning techniques wil
 2. Binary classification models to predict whether an engine will fail in a given time period.
 
 ## Development Environment
-1. Integrated Development Environment with Visual Studio Code (1.62.3) and Python (3.9.1) 2. Data processing with Pandas (1.3.4) and Numpy(1.21.3)
+1. Integrated Development Environment with Visual Studio Code (1.62.3) and Python (3.9.1)
+2. Data processing with Pandas (1.3.4) and Numpy(1.21.3)
 3. Data visualisation with Seaborn (0.11.2) and Yellowbrick (1.3.post1)
 4. Machine learning with Scikit_learn (1.1.dev0)
