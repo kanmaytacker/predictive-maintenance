@@ -18,8 +18,35 @@ In order to achieve the goals of the exercise supervised learning techniques wil
 1. Regression models to predict the continuous dependent variable TTF
 2. Binary classification models to predict whether an engine will fail in a given time period.
 
-## Development Environment
-1. Integrated Development Environment with Visual Studio Code (1.62.3) and Python (3.9.1)
-2. Data processing with Pandas (1.3.4) and Numpy(1.21.3)
-3. Data visualisation with Seaborn (0.11.2) and Yellowbrick (1.3.post1)
-4. Machine learning with Scikit_learn (1.1.dev0)
+# Results
+
+## Regression Models
+
+As per our analysis, non-linear models outperformed the linear model for the regression task. Polynomial regression and Random Forest models had similar performance on the test dataset.
+
+The Random Forest model took a significant amount of time to train due to the number of hyperparameters whereas the linear and polynomial regression models were trained in a short time. Both the non-linear models show a certain amount of overfitting. For the random forest model, the model can be tuned further to reduce the overfitting whereas for the polynomial regression model, a lower degree can be used, but it reduces the performance the model. Overfitting can also be reduced by increasing the size of the dataset. 
+
+The assumptions regarding the performance improvement by using sensors S1 and S3 along with CYCLE and setting an upper threshold for TTF also hold true for all the models. Using the TTF from when degradation actually started gives the optimal results.
+![Results from regression models](/images/regression-metrics.png)
+
+## Classification Models
+
+
+While performing binary classification, the Random Forest model had the largest area under the ROC curve. Logistic regression had a better precision than other models while Naive Bayes model had the best recall. 
+
+It can be observed that for higher thresholds, Random Forest has better precision than the other models but lower recall. This can be seen in the precision-recall curves. At the selected thresholds, Naive Bayes model has the highest maintenance capacity. A change in thresholds can increase the maintenance capacity but with observable effects on the performance metrics.
+
+![Results from classification models](/images/classification-metrics.png)
+
+
+
+
+# Next Steps
+
+In this document, regression and classification models were used for failure analysis for predictive maintenance. Regression models were used to estimate the time to failure (TTF) and classification models were used to predict if an aircraft will fail in a given period. Multiple models were assessed, and the document covers the quantitative analysis of the results.
+Possible extensions and improvements to the approach are:
+* Smoothing the sensor measurements to reduce the effect of noise and make faults more distinguishable.
+* Modelling the regression problem as time series analysis and adding distributed lags to the data (Zhang et al., 2018).
+* Usage of ARIMA models for forecasting failure of the aircrafts (Yang et al., 2017).
+* Employing deep learning techniques such as CNN and LSTM (Hermawan et al., 2020) along with self-
+organizing maps. (Chen et al., 2007).
